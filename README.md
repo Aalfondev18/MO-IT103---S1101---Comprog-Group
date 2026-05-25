@@ -37,7 +37,6 @@ This project aims to simulate a simplified payroll management environment for Mo
 
 * Java
 * Java Swing
-* Object-Oriented Programming (OOP)
 * Event-Driven Programming
 * Exception Handling
 * HashMap Data Structure
