@@ -19,7 +19,7 @@ public class employeePage implements ActionListener {
     JTextArea resultArea;
 
     // Replace with your actual CSV/TXT file path
-    String empFile = "src/employee_Data.csv";
+    String empFile = "employee_Data.csv";
 
     public employeePage() {
 
