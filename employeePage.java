@@ -91,6 +91,11 @@ public class employeePage implements ActionListener {
 
                     throw new IllegalArgumentException(
                             "Employee ID cannot be empty.");
+                } 
+                if (!employeeID.matches("\\d+")) {
+
+                    throw new IllegalArgumentException(
+                            "Employee ID must contain numbers only.");
                 }
 
                 boolean found = false;
@@ -109,7 +114,9 @@ public class employeePage implements ActionListener {
                     }
 
                     String[] parts = line.split(",");
-
+                    if (parts.length < 4) {
+                            continue;
+                        }
                     String id = parts[0].trim();
 
                     // Match employee ID
@@ -161,6 +168,7 @@ public class employeePage implements ActionListener {
                         "Error reading employee file.",
                         "File Error",
                         JOptionPane.ERROR_MESSAGE);
+                ex.printStackTrace();
             }
         }
 
