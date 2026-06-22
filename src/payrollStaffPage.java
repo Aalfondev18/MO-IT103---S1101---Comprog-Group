@@ -356,14 +356,32 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                 }
                 
                 String lastName =
-                        JOptionPane.showInputDialog(
-                                this,
-                                "Last Name:");
+                            JOptionPane.showInputDialog(
+                               this,
+                               "Last Name:");
+
+               if (lastName == null ||
+                       lastName.trim().isEmpty()) {
+
+                   JOptionPane.showMessageDialog(
+                           this,
+                           "Employee creation cancelled.");
+
+                   return;
+               }
 
                 String firstName =
                         JOptionPane.showInputDialog(
                                 this,
                                 "First Name:");
+                if (firstName == null ||
+                        firstName.trim().isEmpty()){
+                        JOptionPane.showMessageDialog(
+                        this,
+                               "Employee creation cancelled.");
+
+                        return;
+                }
                 
                 try {
 
