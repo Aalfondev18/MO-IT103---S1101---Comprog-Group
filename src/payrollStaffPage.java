@@ -138,22 +138,23 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                 String line;
 
                 while ((line = br.readLine()) != null) {
-
-                    String[] parts = line.split(",");
+                            if (line.trim().isEmpty()) {
+                            continue;
+                        }
+                    System.out.println(line);
+                    String[] parts = line.split(",", -1);
                     System.out.println("Columns: " + parts.length);
-                    if (parts.length >= 19) {
-                        
+                    if (parts.length < 3) {
+                             continue;
+                            }
                         tableModel.addRow(
                                 new Object[] {
                                        parts[0],   // Employee #
                                        parts[1],   // Last Name
                                        parts[2],   // First Name
-                                       parts[11],  // Position
-                                       parts[10],  // Status
-                                       parts[13],  // Basic Salary
-                                       parts[18]   // Hourly Rate
+                       
                                 });
-                    }
+                   
                 }
             }
 
@@ -404,6 +405,7 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                                 this,
                                 "Employee added successfully.");
                         System.out.println("ADD REFRESH");
+                        
                         loadEmployeeTable();
                     }
 
