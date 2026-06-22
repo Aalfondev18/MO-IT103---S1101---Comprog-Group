@@ -3,7 +3,6 @@
 ## Developers
 
 * Almer Jesry Albarracin
-* Jayson Domantay
 * Julie Ann Abella
 * May Ann Tomogsoc
 * Alexander William Alfon
@@ -14,47 +13,102 @@ ComProg Group
 
 ---
 
-## Description
+# Description
 
-The MotorPH Employee App is a Java-based payroll management application designed to improve employee payroll processing and user interaction through a graphical user interface (GUI). The system was developed using Java Swing and follows event-driven programming principles to provide a responsive and user-friendly experience.
+The MotorPH Employee App is a Java-based payroll management system developed using Java Swing. The application provides employee information management, payroll computation, and secure user authentication through a graphical user interface.
 
-The application allows users to securely log in, register employee accounts, and interact with payroll-related features through a clean desktop interface. It includes input validation, exception handling, and user feedback mechanisms to ensure accurate and reliable system behavior.
+The system allows authorized users to manage employee records, generate payroll information, and maintain employee data stored in CSV files. It implements CRUD (Create, Read, Update, Delete) operations, input validation, exception handling, and role-based login functionality to ensure data accuracy and reliability.
 
-This project aims to simulate a simplified payroll management environment for MotorPH by improving operational efficiency, minimizing manual errors, and demonstrating proper software design practices.
+The project demonstrates the application of object-oriented programming, file handling, event-driven programming, and GUI development concepts in creating a functional payroll management system.
 
-## Features
+---
 
-* Employee Login System
-* Employee Registration Module
-* Show/Hide Password Functionality
-* Input Validation and Error Handling
-* Event-Driven GUI Interaction
-* User-Friendly Dialog Messages
-* Structured Java Swing Interface
-* Payroll System Foundation for Future Integration
+# Features
 
-## Technologies Used
+## User Authentication
+
+* CSV-based login validation
+* Role-based access control
+* Employee and Payroll Staff user roles
+* Input validation and error handling
+
+## Employee Record Management
+
+* Add Employee Records
+* Search Employee Records
+* Update Employee Information
+* Delete Employee Records
+* Duplicate Employee ID detection
+* Employee ID validation
+
+## Payroll Management
+
+* Generate individual employee payroll
+* Generate payroll records for all employees
+* Gross salary computation
+* Deduction computation
+* Net salary computation
+* Attendance-based payroll processing
+
+## Data Management
+
+* CSV file storage and retrieval
+* Persistent employee record storage
+* Automatic table refresh after CRUD operations
+* Employee information display using JTable
+
+## User Interface
+
+* Java Swing GUI
+* Event-driven interaction
+* User-friendly dialog messages
+* Employee information table view
+* Responsive desktop application interface
+
+---
+
+# Technologies Used
 
 * Java
 * Java Swing
 * Event-Driven Programming
+* File Handling (CSV)
 * Exception Handling
-* HashMap Data Structure
+* Object-Oriented Programming (OOP)
+* JTable
 
-## Objectives
+---
 
-* Improve payroll-related user interaction through GUI implementation
-* Demonstrate proper validation and exception handling
-* Apply event-driven programming concepts
-* Maintain structured and modular application design
-* Support future payroll management integration and expansion
+# Objectives
 
-## Future Improvements
+* Provide a functional employee management system for MotorPH
+* Automate payroll computation and salary generation
+* Maintain employee records through CRUD operations
+* Demonstrate file handling using CSV data storage
+* Apply event-driven programming concepts in GUI development
+* Implement validation and exception handling for system reliability
+* Develop a user-friendly payroll management application
 
-* Payroll computation and salary generation
-* CSV or database integration
-* Employee payroll dashboard
-* Role-based user access
-* Payroll history and report generation
-* Secure password encryption
-* Attendance tracking integration
+---
+
+# Project Structure
+
+* Login Module
+* Employee Information Module
+* Payroll Generation Module
+* Employee Record Management Module
+* CSV Data Storage Module
+* JTable Employee Dashboard
+
+---
+
+# Future Improvements
+
+* Database integration (MySQL)
+* Password encryption and security enhancements
+* Advanced employee search and filtering
+* Attendance management dashboard
+* Payroll report generation and export
+* Employee profile management
+* Audit logs and activity tracking
+* Enhanced user interface and reporting features
