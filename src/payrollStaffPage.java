@@ -331,7 +331,7 @@ public class payrollStaffPage extends JFrame implements ActionListener {
     // ADD EMPLOYEE
     // ====================================================
             public void addEmployee() {
-
+                //add employee number
                 String empNo =
                         JOptionPane.showInputDialog(
                                 this,
@@ -347,6 +347,14 @@ public class payrollStaffPage extends JFrame implements ActionListener {
 
                     return;
                 }
+                if (!empNo.matches("\\d+")) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Employee Number must contain numbers only.");
+
+                        return;
+                    }
                 if (employeeExists(empNo)) {
 
                     JOptionPane.showMessageDialog(
@@ -355,7 +363,7 @@ public class payrollStaffPage extends JFrame implements ActionListener {
 
                     return;
                 }
-                
+              //add last name  
                 String lastName =
                             JOptionPane.showInputDialog(
                                this,
@@ -370,7 +378,7 @@ public class payrollStaffPage extends JFrame implements ActionListener {
 
                    return;
                }
-
+            //add first name
                 String firstName =
                         JOptionPane.showInputDialog(
                                 this,
@@ -383,7 +391,337 @@ public class payrollStaffPage extends JFrame implements ActionListener {
 
                         return;
                 }
-                
+            // add birthday
+                String birthday =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Birthday (MM/DD/YYYY):");
+
+                if (birthday == null ||
+                        birthday.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Birthday is required.");
+
+                    return;
+                }
+                if (!birthday.matches("\\d{2}/\\d{2}/\\d{4}")) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Birthday must be in MM/DD/YYYY format.");
+
+                    return;
+                }
+            // add address
+                String address =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Address:");
+
+                if (address == null ||
+                        address.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Address is required.");
+
+                    return;
+                }
+            //add phone number
+                String phoneNumber =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Phone Number:");
+
+                if (phoneNumber == null ||
+                        phoneNumber.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Phone Number is required.");
+
+                    return;
+                }
+                if (!phoneNumber.matches("[0-9+\\- ]+")) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Invalid phone number.");
+
+                        return;
+                    }
+            // Add sssNumber
+                String sssNumber =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "SSS Number:");
+
+                if (sssNumber == null ||
+                        sssNumber.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "SSS Number is required.");
+
+                    return;
+                }
+            // Add Philhealt#
+                String philHealth =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "PhilHealth Number:");
+
+                if (philHealth == null ||
+                        philHealth.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "PhilHealth Number is required.");
+
+                    return;
+                }
+             // add tin#
+                String tin =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "TIN Number:");
+
+                if (tin == null ||
+                        tin.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "TIN Number is required.");
+
+                    return;
+                }
+            // pagibig#
+                String pagibig =
+                    JOptionPane.showInputDialog(
+                            this,
+                            "Pag-IBIG Number:");
+
+                    if (pagibig == null ||
+                            pagibig.trim().isEmpty()) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Pag-IBIG Number is required.");
+
+                        return;
+                    }
+            //add emp status
+                    String empStatus =
+                       JOptionPane.showInputDialog(
+                                this,
+                                "Employment Status:");
+
+                if (empStatus == null ||
+                        empStatus.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Employment Status is required.");
+
+                    return;
+                }
+            //add position
+                String position =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Position:");
+
+                if (position == null ||
+                        position.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Position is required.");
+
+                    return;
+                }
+            // add supervisor
+                String supervisor =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Immediate Supervisor:");
+
+                if (supervisor == null ||
+                        supervisor.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Immediate Supervisor is required.");
+
+                    return;
+                }
+                //add basic salary
+                String basicSalary =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Basic Salary:");
+
+                if (basicSalary == null ||
+                        basicSalary.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Basic Salary is required.");
+
+                    return;
+                }
+                try {
+                        Double.parseDouble(
+                                basicSalary.replace(",", ""));
+
+                    } catch (NumberFormatException e) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Basic Salary must be numeric.");
+
+                        return;
+                    }
+                                    //add riceSubsidy
+                String riceSubsidy =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Rice Subsidy:");
+
+                if (riceSubsidy == null ||
+                        riceSubsidy.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Rice Subsidy is required.");
+
+                    return;
+                }
+                try {
+                       Double.parseDouble(
+                                riceSubsidy.replace(",", ""));
+
+                    } catch (NumberFormatException e) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Hourly Rate must be numeric.");
+
+                        return;
+                    }
+                //add phone allowance
+                String phoneAllowance =
+                        JOptionPane.showInputDialog(
+                                this,
+                                "Phone Allowance:");
+
+                if (phoneAllowance == null ||
+                        phoneAllowance.trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Phone Allowance is required.");
+
+                    return;
+                }
+                try {
+
+                    Double.parseDouble(
+                            phoneAllowance.replace(",", ""));
+
+                } catch (NumberFormatException e) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Hourly Rate must be numeric.");
+
+                    return;
+                }
+                //add clothing allowance
+                String clothingAllowance =
+                            JOptionPane.showInputDialog(
+                                    this,
+                                    "Clothing Allowance:");
+
+                    if (clothingAllowance == null ||
+                            clothingAllowance.trim().isEmpty()) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Clothing Allowance is required.");
+
+                        return;
+                    }
+                    try {
+
+                    Double.parseDouble(
+                            clothingAllowance.replace(",", ""));
+
+                } catch (NumberFormatException e) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Hourly Rate must be numeric.");
+
+                    return;
+                }
+                //add gross permonth
+                String grossSemiMonthlyRate =
+                            JOptionPane.showInputDialog(
+                                    this,
+                                    "Gross Semi-monthly Rate:");
+
+                    if (grossSemiMonthlyRate == null ||
+                            grossSemiMonthlyRate.trim().isEmpty()) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Gross Semi-monthly Rate is required.");
+
+                        return;
+                    }
+                    try {
+                            Double.parseDouble(
+                                   grossSemiMonthlyRate.replace(",", ""));
+
+                        } catch (NumberFormatException e) {
+
+                            JOptionPane.showMessageDialog(
+                                    this,
+                                    "Hourly Rate must be numeric.");
+
+                            return;
+                        }
+                //add hourly rate
+                String hourlyRate =
+                            JOptionPane.showInputDialog(
+                                    this,
+                                    "Hourly Rate:");
+
+                    if (hourlyRate == null ||
+                            hourlyRate.trim().isEmpty()) {
+
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Hourly Rate is required.");
+
+                        return;
+                    }
+                    try {
+                            Double.parseDouble(
+                                     hourlyRate.replace(",", ""));
+
+                        } catch (NumberFormatException e) {
+
+                            JOptionPane.showMessageDialog(
+                                    this,
+                                    "Basic Salary must be numeric.");
+
+                            return;
+                        }
+                    // nex feature
                 try {
 
                         FileWriter fw =
@@ -395,8 +733,23 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                                 "\n"
                                 + empNo + ","
                                 + lastName + ","
-                                + firstName
-                                + ",,,,,,,,,,,,,,,"
+                                + firstName + ","
+                                + birthday + ","
+                                + address + ","
+                                + phoneNumber + ","
+                                + sssNumber + ","
+                                + philHealth + ","
+                                + tin + ","       
+                                + pagibig + ","
+                                + empStatus + ","
+                                + position + ","
+                                + supervisor + ","
+                                + basicSalary + ","
+                                + riceSubsidy + ","
+                                + phoneAllowance + ","
+                                + clothingAllowance + ","
+                                + grossSemiMonthlyRate + ","
+                                + hourlyRate
                         );
 
                         fw.close();
@@ -474,10 +827,6 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                         return;
                     }
 
-                    String newFirstName =
-                            JOptionPane.showInputDialog(
-                                    this,
-                                    "Enter New First Name:");
                    try {
 
                     BufferedReader br =
@@ -494,20 +843,141 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                     while ((line = br.readLine()) != null) {
 
                         String[] parts =
-                                line.split(",");
+                               line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+                    System.out.println("Columns: " + parts.length);
+                    System.out.println(line);
+                 if (parts[0].trim().equals(empNo)) {
 
-                        if (parts[0].trim()
-                                .equals(empNo)) {
+                        String newLastName =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Last Name:",
+                                        parts[1]);
 
+                        String newFirstName =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "First Name:",
+                                        parts[2]);
+
+                        String newBirthday =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Birthday:",
+                                        parts[3]);
+                        String newAddress =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Address:",
+                                        parts[4]);
+
+                        String newPhoneNumber =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Phone Number:",
+                                        parts[5]);
+
+                        String newSSS =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "SSS #:",
+                                        parts[6]);
+
+                        String newPhilHealth =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "PhilHealth #:",
+                                        parts[7]);
+
+                        String newTIN =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "TIN #:",
+                                        parts[8]);
+
+                        String newPagibig =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Pag-IBIG #:",
+                                        parts[9]);
+
+                        String newEmpStatus =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Employment Status:",
+                                        parts[10]);
+
+                        String newPosition =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Position:",
+                                        parts[11]);
+
+                        String newSupervisor =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Immediate Supervisor:",
+                                        parts[12]);
+
+                        String newBasicSalary =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Basic Salary:",
+                                        parts[13]);
+
+                        String newRiceSubsidy =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Rice Subsidy:",
+                                        parts[14]);
+
+                        String newPhoneAllowance =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Phone Allowance:",
+                                        parts[15]);
+
+                        String newClothingAllowance =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Clothing Allowance:",
+                                        parts[16]);
+
+                        String newGrossSemiMonthlyRate =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Gross Semi-monthly Rate:",
+                                        parts[17]);
+
+                        String newHourlyRate =
+                                JOptionPane.showInputDialog(
+                                        this,
+                                        "Hourly Rate:",
+                                        parts[18]);
+                
+                            parts[1] = newLastName;
                             parts[2] = newFirstName;
+                            parts[3] = newBirthday;
+                            parts[4] = newAddress;
+                            parts[5] = newPhoneNumber;
+                            parts[6] = newSSS;
+                            parts[7] = newPhilHealth;
+                            parts[8] = newTIN;
+                            parts[9] = newPagibig;
+                            parts[10] = newEmpStatus;
+                            parts[11] = newPosition;
+                            parts[12] = newSupervisor;
+                            parts[13] = newBasicSalary;
+                            parts[14] = newRiceSubsidy;
+                            parts[15] = newPhoneAllowance;
+                            parts[16] = newClothingAllowance;
+                            parts[17] = newGrossSemiMonthlyRate;
+                            parts[18] = newHourlyRate;
 
-                            line =
-                                    String.join(
-                                            ",",
-                                            parts);
+                        line = String.join(",", parts);
 
-                            found = true;
-                        }
+                        found = true;
+                    }
 
                         records.add(line);
                     }
@@ -545,9 +1015,11 @@ public class payrollStaffPage extends JFrame implements ActionListener {
 
                 catch (Exception e) {
 
+                    e.printStackTrace();
+
                     JOptionPane.showMessageDialog(
                             this,
-                            "Error updating employee.");
+                            e.getMessage());
                 }
             }
         

@@ -134,7 +134,7 @@ public class employeePage implements ActionListener {
                                         + firstName + " " + lastName + "\n"
                                         + "Employee Birthday: " + birthDay + "\n"
                                         + "===================================="
-                        );
+                           );
 
                         found = true;
                         break;
