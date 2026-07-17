@@ -40,13 +40,16 @@ public class payrollStaffPage extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
 
         // ===== BUTTON PANEL =====
-        JPanel buttonPanel = new JPanel();
+        JPanel buttonPanel = new JPanel(
+        new FlowLayout(FlowLayout.LEFT, 10, 10));
         
         tableModel = new DefaultTableModel();
 
         tableModel.addColumn("Employee #");
         tableModel.addColumn("Last Name");
         tableModel.addColumn("First Name");
+        tableModel.addColumn("Position");
+        tableModel.addColumn("Status");
 
         employeeTable = new JTable(tableModel) {
             @Override
@@ -57,7 +60,22 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                 return false;
             }
         };
+        //employee table UI
+        employeeTable.setRowHeight(28);
 
+        employeeTable.setFont(
+                new Font("Segoe UI", Font.PLAIN, 13));
+
+        employeeTable.getTableHeader().setFont(
+                new Font("Segoe UI", Font.BOLD, 13));
+
+        employeeTable.setSelectionMode(
+                ListSelectionModel.SINGLE_SELECTION);
+
+        employeeTable.setGridColor(Color.LIGHT_GRAY);
+        employeeTable.setShowGrid(true);
+        
+        
         JScrollPane tableScrollPane =
                 new JScrollPane(employeeTable);
         
@@ -95,6 +113,16 @@ public class payrollStaffPage extends JFrame implements ActionListener {
         buttonPanel.add(onePayrollBtn);
         buttonPanel.add(allPayrollBtn);
         buttonPanel.add(clearBtn);
+        
+        Font buttonFont = new Font("Segoe UI", Font.BOLD, 13);
+
+        addEmployeeBtn.setFont(buttonFont);
+        updateEmployeeBtn.setFont(buttonFont);
+        employeeDetailsBtn.setFont(buttonFont);
+        deleteEmployeeBtn.setFont(buttonFont);
+        onePayrollBtn.setFont(buttonFont);
+        allPayrollBtn.setFont(buttonFont);
+        clearBtn.setFont(buttonFont);
 
         // ===== OUTPUT AREA =====
         outputArea = new JTextArea();
@@ -102,9 +130,9 @@ public class payrollStaffPage extends JFrame implements ActionListener {
         outputArea.setEditable(false);
 
         outputArea.setFont(
-                new Font("Monospaced",
-                        Font.PLAIN,
-                        12));
+                     new Font("Consolas",
+                Font.PLAIN,
+                13));
 
         JScrollPane scrollPane =
                 new JScrollPane(outputArea);
@@ -118,8 +146,9 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                         tableScrollPane,
                         scrollPane);
 
-        splitPane.setDividerLocation(250);
-
+       splitPane.setDividerLocation(400);
+       splitPane.setResizeWeight(0.70);
+       
         add(buttonPanel, BorderLayout.NORTH);
         add(splitPane, BorderLayout.CENTER);
         loadEmployeeTable();
@@ -144,7 +173,7 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                     System.out.println(line);
                     String[] parts = line.split(",", -1);
                     System.out.println("Columns: " + parts.length);
-                    if (parts.length < 3) {
+                    if (parts.length < 12) {
                              continue;
                             }
                         tableModel.addRow(
@@ -152,6 +181,8 @@ public class payrollStaffPage extends JFrame implements ActionListener {
                                        parts[0],   // Employee #
                                        parts[1],   // Last Name
                                        parts[2],   // First Name
+                                       parts[11],  // Position
+                                       parts[10]   // Employment Status
                        
                                 });
                    
